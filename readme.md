@@ -5,12 +5,14 @@
 
 ## Overview
 
-Simple starter C++ project with:
+This exercise explores the valgrind tool to improve code quality during development and testing. Valgrind helps detect several types of code issues:
 
-- cmake
-- googletest
+Undefined behavior
+Function and memory profiling
+Data-race detection
+Memory leak detection
 
-## Standard install via command-line
+## Standard install and run valgrind via command-line
 ```
 git clone --recursive https://github.com/dpiet/cpp-boilerplate
 cd <path to repository>
@@ -20,7 +22,15 @@ cmake ..
 make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
+valgrind ./app/shell-app
+valgrind --tool=callgrind ./app/shell-app
 ```
+## Idendified Bugs via valgrind
+1. Misuse of uninitialized values
+Uninitialized bool variable, should initial as true or false
+2. Memory Leak using raw pointer
+Use smart pointer rather than raw pointer
+
 
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
