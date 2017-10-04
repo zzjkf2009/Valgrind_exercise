@@ -5,7 +5,8 @@ int main()
 {
     AnalogSensor lightSensor(5);
     std::cout << "Averaged sensor reading: " << lightSensor.Read() << std::endl;
-    bool terminator;
+    /* The bool has no value assigned to it, initialize it to true */
+    bool terminator = true;
     if( terminator )
     {
         std::cout << "DONE" << std::endl;
